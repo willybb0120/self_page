@@ -1,26 +1,69 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* 預設直接使用 VS Code Dark Theme，不分 Light Mode */
+    --background: 240 6% 10%; /* #1e1e1e */
+    --foreground: 0 0% 83%; /* #d4d4d4 */
+
+    --card: 240 4% 16%; /* #252526 */
+    --card-foreground: 0 0% 83%;
+
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 83%;
+
+    --primary: 207 100% 40%; /* #007acc - VS Code Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 83%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 207 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3% 26%; /* #3e3e42 */
+    --input: 240 3% 26%;
+    --ring: 207 100% 40%;
+
+    --radius: 0rem; /* VS Code 風格通常比較方正，或者只有很小的圓角 */
+  }
+
+  .dark {
+    --background: 240 6% 10%;
+    --foreground: 0 0% 83%;
+    --card: 240 4% 16%;
+    --card-foreground: 0 0% 83%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 83%;
+    --primary: 207 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 83%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 207 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3% 26%;
+    --input: 240 3% 26%;
+    --ring: 207 100% 40%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
