@@ -25,13 +25,18 @@ export function InfoCard({ title, description, tags, link, subtitle }: InfoCardP
               className="inline-flex items-baseline font-medium leading-tight text-white hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
               href={link || "#"}
               target={link ? "_blank" : "_self"}
-              rel="noreferrer"
+              rel="noreferrer noopener"
+              aria-label={link ? `${title} (opens in a new tab)` : undefined}
             >
               <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-              <span>{title}</span>
-              {link && (
-                <ArrowUpRight className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 motion-reduce:transition-none ml-1" />
-              )}
+              <span>
+                {title}
+                {link && (
+                  <span className="inline-block">
+                    <ArrowUpRight className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 motion-reduce:transition-none ml-1" />
+                  </span>
+                )}
+              </span>
             </a>
           </div>
         </h3>
