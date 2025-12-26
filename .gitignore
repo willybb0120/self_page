@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 gemini.md
+ACHIEVEMENTS.md
 
 # debug
 npm-debug.log*

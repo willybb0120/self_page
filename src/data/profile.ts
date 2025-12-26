@@ -11,6 +11,7 @@ export interface ProfileData {
   headline: string;
   about: string[]; // 支援多段落
   projects: Project[];
+  navLinks: string[];
 }
 
 export const profileData: ProfileData = {
@@ -21,6 +22,7 @@ export const profileData: ProfileData = {
     "Back in 2012, I decided to try my hand at creating custom Tumblr themes and tumbled head first into the rabbit hole of coding and web development. Fast-forward to today, and I’ve had the privilege of building software for an advertising agency, a start-up, and a huge corporation.",
     "My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients."
   ],
+  navLinks: ["About", "Projects", "Contact"],
   projects: [
     {
       title: "個人介紹網頁 (Portfolio)",

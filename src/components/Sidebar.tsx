@@ -8,7 +8,7 @@ interface SidebarProps {
 
 export function Sidebar({ profile }: SidebarProps) {
   return (
-    <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+    <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-5/12 lg:flex-col lg:justify-between lg:py-12 lg:overflow-y-auto">
       <div>
         {/* Avatar */}
         <div className="mb-8 h-24 w-24 overflow-hidden rounded-full border-2 border-zinc-800 bg-zinc-900 shadow-xl">
@@ -28,9 +28,9 @@ export function Sidebar({ profile }: SidebarProps) {
         </p>
 
         {/* Navigation */}
-        <nav className="nav hidden lg:block mt-16" aria-label="In-page jump links">
+        <nav className="nav hidden lg:block mt-12" aria-label="In-page jump links">
           <ul className="w-max">
-            {["About", "Projects", "Contact"].map((item) => (
+            {profile.navLinks.map((item) => (
               <li key={item}>
                 <Link className="group flex items-center py-3" href={`#${item.toLowerCase()}`}>
                   <span className="nav-indicator mr-4 h-px w-8 bg-zinc-600 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none"></span>
