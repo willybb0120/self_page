@@ -20,8 +20,8 @@ export function Sidebar({ profile }: SidebarProps) {
       <div>
         {/* Avatar */}
         <div className="mb-8 block h-32 w-32 overflow-hidden rounded-full border-2 border-zinc-800 bg-zinc-900 shadow-xl relative">
-          <Image 
-            src="/images/bb.png" 
+          <Image
+            src="/images/me.jpg"
             alt={`${profile.name} avatar`}
             fill
             className="object-cover"
@@ -46,29 +46,29 @@ export function Sidebar({ profile }: SidebarProps) {
             {profile.navLinks.map((item) => {
               const sectionId = toSlug(item);
               const isActive = activeSection === sectionId;
-              
+
               return (
                 <li key={item}>
                   <ScrollLink
                     to={sectionId}
                     spy={true}
                     smooth={true}
-                    offset={-100} 
+                    offset={-100}
                     duration={500}
                     onSetActive={() => setActiveSection(sectionId)}
                     className={`group flex items-center py-3 cursor-pointer ${isActive ? "active" : ""}`}
                   >
-                    <span 
+                    <span
                       className={`nav-indicator mr-4 h-px transition-all motion-reduce:transition-none ${
-                        isActive 
-                          ? "w-16 bg-white" 
+                        isActive
+                          ? "w-16 bg-white"
                           : "w-8 bg-zinc-600 group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white"
                       }`}
                     ></span>
-                    <span 
+                    <span
                       className={`nav-text text-xs font-bold uppercase tracking-widest ${
-                        isActive 
-                          ? "text-white" 
+                        isActive
+                          ? "text-white"
                           : "text-zinc-500 group-hover:text-white group-focus-visible:text-white"
                       }`}
                     >

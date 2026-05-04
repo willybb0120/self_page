@@ -12,6 +12,6 @@ export function toSlug(text: string): string {
   return text
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-')     // 空格換成 -
-    .replace(/[^\w-]+/g, '')  // 移除特殊字元
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
 }

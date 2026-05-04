@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { ProfileData } from "@/data/profile";
+import { toSlug } from "@/lib/utils";
 
 interface MobileNavProps {
   navLinks: ProfileData["navLinks"];
@@ -48,7 +49,7 @@ export function MobileNav({ navLinks }: MobileNavProps) {
       >
         <nav className="mt-20 flex flex-col space-y-6">
           {navLinks.map((item) => {
-            const sectionId = item.toLowerCase().replace(/\s+/g, '-');
+            const sectionId = toSlug(item);
             return (
               <ScrollLink
                 key={item}

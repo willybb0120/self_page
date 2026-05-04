@@ -6,6 +6,7 @@ export interface ContentItem {
   tags: string[];
   link?: string;
   subtitle?: string;
+  highlights?: string[];
 }
 
 interface ContentSectionProps {
@@ -29,6 +30,7 @@ export function ContentSection({ title, id, items }: ContentSectionProps) {
             tags={item.tags}
             link={item.link}
             subtitle={item.subtitle}
+            highlights={item.highlights}
           />
         ))}
       </div>
