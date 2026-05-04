@@ -60,7 +60,28 @@
 
 ## 7. Codex Workflow (Codex 開發工作流程)
 
-每次開發分三個階段：理解需求、實作驗證、收尾交付。
+每次開發分四個階段：分支與需求確認、理解需求、實作驗證、收尾交付。
+
+### 階段零：分支與工作區確認
+
+開始任何會修改檔案的工作前，Codex 必須先讀取：
+
+```bash
+git status --short --branch
+```
+
+分支策略參考 Drinky 專案的工作流程，但需依本專案特性調整：
+
+- **預設不直接污染 `main`**：若任務是新功能、修 bug、SEO、視覺調整或大幅內容整理，應先建議使用 feature/fix/docs branch。
+- **分支命名**：
+  - 新功能：`feat/功能名稱`
+  - 修 bug：`fix/問題名稱`
+  - 文件：`docs/文件名稱`
+  - 內容整理：`content/內容名稱`
+- **例外**：若只是小幅文字修正、使用者明確要求直接改目前 branch，或目前已有使用者指定的工作分支，則可留在目前 branch，但必須先說明目前 branch 與工作區狀態。
+- **保護使用者變更**：若工作區已有未提交變更，Codex 必須先辨識哪些檔案受影響，避免覆蓋或回復不是自己造成的改動。
+
+除非使用者明確要求，Codex 不主動 commit、push、merge、刪 branch 或改寫 git history。
 
 ### 階段一：理解需求與保護架構
 
@@ -77,6 +98,7 @@
 - `src/app/page.tsx` 是否仍維持單頁容器職責。
 - `src/components/*` 是否符合單一職責。
 - 導航 ID 是否透過 `toSlug` 或既有工具一致產生。
+- 若是整理作品集，必須優先從本機 repo、GitHub repo、README、commit history 或既有成果檔案萃取可佐證內容，不得憑空誇大專案成熟度或成果數據。
 
 ### 階段二：實作與本地驗證
 
@@ -101,6 +123,7 @@ npm run build
 - 涉及 Next.js route、metadata、image、layout、Tailwind class 大量變更時，必須執行 `npm run build`。
 - 涉及 responsive navigation、Scroll Spy、MobileNav、hover/animation 時，必須說明桌面與手機版需要檢查的互動點。
 - 如果命令因環境限制無法執行，必須在回覆中明確說明未驗證項目與原因。
+- 若需要讓使用者實際檢查畫面，Codex 應啟動 `npm run dev` 並提供本機網址；若只是資料或文字整理，通常不需要啟動 dev server。
 
 ### 階段三：收尾交付
 
@@ -112,6 +135,8 @@ npm run build
 - 沒有引入 Tailwind CSS v4 或偏離 Shadcn UI 的樣式系統。
 - 所有新增互動元素都有 `aria-label`、`sr-only` 或合理的語意標籤。
 - 變更摘要要簡潔說明「改了什麼、驗證了什麼、還有什麼風險」。
+- 若使用者確認要合併分支，才可依序進行 merge/squash、必要文件更新、commit、刪除工作分支與 push；任何一步都不得在未確認前自動執行。
+- 若本次變更新增重要架構規則、資料來源規則或驗證流程，必須同步更新 `AGENTS.md`。
 
 ## 8. Git Rules (Git 操作規則)
 
