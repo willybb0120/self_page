@@ -80,7 +80,7 @@ export const profileData: ProfileData = {
   headline: "專注於實作與硬體加速的電子工程師，熱衷於解決實際問題與自動化流程。",
   about: [
     "目前就讀於逢甲大學電子工程學系，專注於實驗室專題研究與硬體系統開發。作為實作導向的工程師，擅長將理論轉化為可運作的系統原型。",
-    "我的專業主攻 FPGA 系統設計、神經網路硬體加速器與 VLSI 晶片設計，能夠將複雜的演算法移植到硬體電路中，實現高效能運算。此外，我對 AI Prompt 工程與自動化腳本也有濃厚興趣，習慣觀察日常流程中的痛點，開發工具來解決效率問題。"
+    "我的專業主攻 FPGA 系統設計、神經網路硬體加速器與 VLSI 晶片設計，能夠將複雜的演算法移植到硬體電路中，實現高效能運算。"
   ],
   navLinks: ["About", "Projects", "Side Projects", "Certificates", "Activities", "Books"],
   projects: [
