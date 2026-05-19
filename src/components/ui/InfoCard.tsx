@@ -11,8 +11,9 @@ interface InfoCardProps {
 }
 
 export function InfoCard({ title, description, tags, link, subtitle }: InfoCardProps) {
-  // 判斷是否為內部連結 (以 / 開頭)
-  const isInternal = link?.startsWith("/");
+  // 判斷是否為內部連結 (以 / 開頭)，PDF 等 public assets 以一般連結開啟。
+  const isPdf = link?.endsWith(".pdf");
+  const isInternal = link?.startsWith("/") && !isPdf;
   const isExternal = link && !isInternal;
 
   const CardContent = (

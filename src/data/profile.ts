@@ -266,6 +266,13 @@ export const profileData: ProfileData = {
   ],
   certificates: [
     {
+      title: "2025 FPGA 智慧運算與終端節點創意應用競賽 佳作",
+      description: "以「Two-Stage ANN 架構於 FPGA 上之心臟指數預測與實作」參加教育部跨域智慧晶片設計推動聯盟競賽，於 Altera Track 榮獲佳作。",
+      link: "/certificates/2025-fpga-ci-altera-honorable-mention.pdf",
+      tags: ["FPGA", "Altera Track", "CI Prediction", "ANN"],
+      subtitle: "Award | 2026"
+    },
+    {
       title: "Google Cloud Professional Architect",
       description: "獲得 Google Cloud 認證，具備設計與管理雲端架構的能力。",
       tags: ["GCP", "Cloud", "Architecture"],
